@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PikaBox — Messenger re-engagement for Facebook fanpages</title>
+<meta name="description" content="PikaBox turns your fanpage inbox into a tagged customer database and runs paced, deduplicated Messenger campaigns to past customers, with built-in account safety.">
+<meta property="og:title" content="PikaBox — Re-engage every customer in your fanpage inbox">
+<meta property="og:description" content="Scan your Facebook page inbox into a customer list, then run safe, paced Messenger campaigns to past customers.">
+<meta property="og:image" content="https://pikabox.tech/assets/campaign-detail.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%232563eb'/><path d='M18 20h28a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H30l-9 7v-7h-3a4 4 0 0 1-4-4V24a4 4 0 0 1 4-4z' fill='white'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-scan" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2M4 12h16"/></symbol>
+  <symbol id="i-wand" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m15 4 1 2 2 1-2 1-1 2-1-2-2-1 2-1zM4 20 14 10M5 5l.5 1 1 .5-1 .5L5 8l-.5-1L3.5 6.5 4.5 6zM19 15l.5 1 1 .5-1 .5-.5 1-.5-1-1-.5 1-.5z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3 4 6v6c0 5 3.5 8.5 8 9 4.5-.5 8-4 8-9V6zM9 12l2 2 4-4"/></symbol>
+  <symbol id="i-dup" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8 8h12v12H8zM4 16V4h12M18 14l-4 4-2-2"/></symbol>
+  <symbol id="i-live" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l3-8 4 16 3-8h4"/></symbol>
+  <symbol id="i-devices" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 5h13v10H3zM7 19h5M16 9h5v10h-5z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M9 5v14M15 5v14"/></symbol>
+</svg>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="#"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#2563eb"/><path d="M18 20h28a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H30l-9 7v-7h-3a4 4 0 0 1-4-4V24a4 4 0 0 1 4-4z" fill="#fff"/></svg>PikaBox</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#features"><span data-en>Features</span><span data-vi>Tính năng</span></a>
+      <a href="#tour"><span data-en>Product</span><span data-vi>Sản phẩm</span></a>
+      <a href="#how"><span data-en>How it works</span><span data-vi>Cách hoạt động</span></a>
+      <a href="#pricing"><span data-en>Pricing</span><span data-vi>Bảng giá</span></a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="hdr-r">
+      <div class="lang" role="group" aria-label="Language"><button type="button" class="on" data-lang="en">EN</button><button type="button" data-lang="vi">VI</button></div>
+      <a class="btn btn-primary btn-sm cta-hdr" href="mailto:hungpv4@pikabox.tech?subject=PikaBox%20early%20access"><span data-en>Get early access</span><span data-vi>Đăng ký dùng sớm</span></a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="copy">
+      <span class="eyebrow"><i></i><span data-en>Early access · Built in Vietnam</span><span data-vi>Giai đoạn dùng sớm · Made in Vietnam</span></span>
+      <h1 data-en>Re-engage every customer sitting in your <em>fanpage inbox</em></h1>
+      <h1 data-vi>Chăm lại toàn bộ khách cũ đang nằm trong <em>inbox fanpage</em></h1>
+      <p class="lead" data-en>PikaBox scans your Facebook page inbox into a tagged customer list, then sends paced, deduplicated Messenger campaigns to past customers, with account safety built in.</p>
+      <p class="lead" data-vi>PikaBox quét hộp thư fanpage thành danh sách khách có nhãn, rồi gửi chiến dịch Messenger tới khách cũ theo nhịp an toàn, không trùng, có cơ chế bảo vệ tài khoản.</p>
+      <div class="cta">
+        <a class="btn btn-light" href="mailto:hungpv4@pikabox.tech?subject=PikaBox%20early%20access"><span data-en>Request early access</span><span data-vi>Đăng ký dùng sớm</span></a>
+        <a class="btn btn-outline-white" href="#tour"><span data-en>See the product</span><span data-vi>Xem sản phẩm</span></a>
+      </div>
+      <ul class="checks">
+        <li><svg><use href="#i-check"/></svg><span data-en>Works with the Facebook account you already use, through a Chrome extension</span><span data-vi>Dùng ngay tài khoản Facebook sẵn có, qua extension Chrome</span></li>
+        <li><svg><use href="#i-check"/></svg><span data-en>Every message pre-rendered on the server; retries never send twice</span><span data-vi>Nội dung render sẵn trên server; retry không bao giờ gửi đôi</span></li>
+        <li><svg><use href="#i-check"/></svg><span data-en>Automatic circuit breaker pauses an account when failures spike</span><span data-vi>Tự ngắt gửi khi tài khoản gặp lỗi hàng loạt</span></li>
+      </ul>
+    </div>
+    <div class="shot">
+      <div class="browser">
+        <div class="bar"><i></i><i></i><i></i><span class="url">app.pikabox.tech/campaigns</span></div>
+        <img src="assets/campaign-detail.png" width="1440" height="820" alt="PikaBox campaign detail: progress bar at 57%, 23 sent, pause and stop controls, list of recipients with status" fetchpriority="high">
+      </div>
+      <div class="float a"><span class="dot ok"><svg width="18" height="18"><use href="#i-check"/></svg></span><div><b>23 / 40 <span data-en>sent</span><span data-vi>đã gửi</span></b><small data-en>Pacing 20–45s · rest after 20</small><small data-vi>Nhịp 20–45s · nghỉ sau 20 tin</small></div></div>
+      <div class="float b"><span class="dot sh"><svg width="18" height="18"><use href="#i-shield"/></svg></span><div><b data-en>Account healthy</b><b data-vi>Tài khoản ổn định</b><small data-en>Circuit breaker armed</small><small data-vi>Circuit breaker đang bật</small></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="bg2">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <span class="kicker" data-en>Features</span><span class="kicker" data-vi>Tính năng</span>
+      <h2 data-en>Built for shops with 5,000–50,000 customers in their inbox</h2>
+      <h2 data-vi>Dành cho shop có 5.000–50.000 khách trong inbox</h2>
+      <p data-en>Everything below ships today. No chatbot flows, no inbound support tooling. Just outbound re-engagement done carefully.</p>
+      <p data-vi>Toàn bộ bên dưới đang chạy thật. Không chatbot, không CSKH inbound. Chỉ tập trung gửi tin chăm khách cũ một cách cẩn thận.</p>
+    </div>
+    <div class="grid3">
+      <div class="card rv"><div class="ico"><svg><use href="#i-scan"/></svg></div><h3 data-en>Inbox scan → customer list</h3><h3 data-vi>Quét inbox → danh sách khách</h3><p data-en>Scan a page inbox once and get a searchable customer list with every Facebook label, gender, phone and last-message date. Junk threads are filtered automatically.</p><p data-vi>Quét hộp thư một lần, có ngay danh sách khách tìm kiếm được kèm đủ nhãn Facebook, giới tính, SĐT, ngày nhắn gần nhất. Tự loại thread rác.</p></div>
+      <div class="card rv"><div class="ico"><svg><use href="#i-wand"/></svg></div><h3 data-en>4-step campaign wizard</h3><h3 data-vi>Tạo chiến dịch 4 bước</h3><p data-en>Pick customers by label or gender, write one message with variants and the customer's name, set send order and pacing, review and launch.</p><p data-vi>Chọn khách theo nhãn/giới tính, soạn một tin có biến thể và tên khách, chọn thứ tự và nhịp gửi, xem lại rồi chạy.</p></div>
+      <div class="card rv"><div class="ico"><svg><use href="#i-dup"/></svg></div><h3 data-en>No duplicates, no spam loops</h3><h3 data-vi>Không gửi trùng, không gửi lặp</h3><p data-en>Each message carries a stable ID, so a retry never sends twice. Skip anyone you already messaged in the last N days.</p><p data-vi>Mỗi tin có mã ổn định nên retry không gửi đôi. Bỏ qua khách vừa được gửi trong N ngày gần đây.</p></div>
+      <div class="card rv"><div class="ico"><svg><use href="#i-live"/></svg></div><h3 data-en>Realtime control</h3><h3 data-vi>Điều khiển realtime</h3><p data-en>Watch sent, queued and failed counts update live. Pause, resume or stop at any moment; the sender obeys within seconds.</p><p data-vi>Theo dõi đã gửi / chờ / lỗi theo thời gian thực. Tạm dừng, chạy tiếp hoặc dừng hẳn bất cứ lúc nào, máy gửi nghe lệnh trong vài giây.</p></div>
+      <div class="card rv"><div class="ico"><svg><use href="#i-shield"/></svg></div><h3 data-en>Account safety circuit breaker</h3><h3 data-vi>Bảo vệ tài khoản</h3><p data-en>If failures spike, sending for that account stops on its own, probes carefully and resumes only when it is safe. A hard block pauses instantly.</p><p data-vi>Lỗi tăng đột biến thì tự ngắt gửi cho tài khoản đó, thăm dò cẩn thận và chỉ chạy lại khi an toàn. Bị chặn cứng thì dừng ngay lập tức.</p></div>
+      <div class="card rv"><div class="ico"><svg><use href="#i-devices"/></svg></div><h3 data-en>Multiple devices, one queue</h3><h3 data-vi>Nhiều máy, một hàng đợi</h3><p data-en>Run Chrome on several machines. The server hands out work so nothing is sent twice and reclaims work from a device that goes offline.</p><p data-vi>Chạy Chrome trên nhiều máy. Server chia việc nên không trùng, máy mất kết nối thì việc được thu hồi tự động.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="tour">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <span class="kicker" data-en>Product tour</span><span class="kicker" data-vi>Sản phẩm</span>
+      <h2 data-en>From inbox to campaign in three screens</h2>
+      <h2 data-vi>Từ inbox đến chiến dịch chỉ qua ba màn hình</h2>
+    </div>
+
+    <div class="tour rv">
+      <div class="txt">
+        <h3 data-en>Your inbox becomes a customer database</h3><h3 data-vi>Inbox trở thành cơ sở dữ liệu khách hàng</h3>
+        <p data-en>The extension reads your page inbox page by page and upserts each person into PikaBox. Nothing is lost on a re-scan; existing customers are updated, not duplicated.</p>
+        <p data-vi>Extension đọc hộp thư page theo từng trang và cập nhật từng người vào PikaBox. Quét lại không mất gì, khách cũ được cập nhật chứ không nhân đôi.</p>
+        <ul>
+          <li><svg><use href="#i-check"/></svg><span data-en>All Facebook labels kept as tags, filter by any of them</span><span data-vi>Giữ đủ nhãn Facebook làm tag, lọc theo bất kỳ nhãn nào</span></li>
+          <li><svg><use href="#i-check"/></svg><span data-en>Search by name, filter by gender, bulk select for a campaign</span><span data-vi>Tìm theo tên, lọc giới tính, chọn hàng loạt để tạo chiến dịch</span></li>
+          <li><svg><use href="#i-check"/></svg><span data-en>Manual add and edit for customers who never messaged</span><span data-vi>Thêm và sửa tay cho khách chưa từng nhắn</span></li>
+        </ul>
+      </div>
+      <div class="browser"><div class="bar"><i></i><i></i><i></i><span class="url">app.pikabox.tech/pages/mina-boutique/customers</span></div><img src="assets/customers.png" width="1440" height="820" alt="Customer list for Mina Boutique: 64 customers with gender, phone, tags such as khách vip and đã mua, and last message time"></div>
+    </div>
+
+    <div class="tour rev rv">
+      <div class="txt">
+        <h3 data-en>Write once, send naturally</h3><h3 data-vi>Soạn một lần, gửi tự nhiên</h3>
+        <p data-en>Insert the customer's name with [u], add a random friendly emoji with [r], and separate alternative versions with a pipe. The preview shows exactly what one customer will receive.</p>
+        <p data-vi>Chèn tên khách bằng [u], thêm emoji vui ngẫu nhiên bằng [r], ngăn các phương án nội dung bằng dấu gạch đứng. Preview hiện đúng nội dung một khách sẽ nhận.</p>
+        <ul>
+          <li><svg><use href="#i-check"/></svg><span data-en>Server renders every message at campaign creation, so what you preview is what gets sent</span><span data-vi>Server render sẵn từng tin lúc tạo chiến dịch, xem gì gửi đó</span></li>
+          <li><svg><use href="#i-check"/></svg><span data-en>Send newest first, oldest first, or shuffled</span><span data-vi>Gửi khách mới nhất trước, cũ nhất trước, hoặc ngẫu nhiên</span></li>
+          <li><svg><use href="#i-check"/></svg><span data-en>Random delay between messages and a long rest every N messages</span><span data-vi>Nghỉ ngẫu nhiên giữa hai tin và nghỉ dài sau mỗi N tin</span></li>
+        </ul>
+      </div>
+      <div class="browser"><div class="bar"><i></i><i></i><i></i><span class="url">app.pikabox.tech/pages/mina-boutique/campaigns/new</span></div><img src="assets/compose.png" width="1440" height="820" alt="Campaign wizard step 2: message editor with [u] and [r] placeholders and a live preview of the rendered message"></div>
+    </div>
+
+    <div class="tour rv">
+      <div class="txt">
+        <h3 data-en>Watch it run. Pause whenever you want.</h3><h3 data-vi>Theo dõi chiến dịch chạy. Tạm dừng bất cứ lúc nào.</h3>
+        <p data-en>Progress, per-recipient status, attempt count and the exact text each person received, all in one screen. Pause, resume or stop with one click.</p>
+        <p data-vi>Tiến độ, trạng thái từng người nhận, số lần thử và đúng nội dung mỗi người đã nhận, tất cả trên một màn hình. Tạm dừng, chạy tiếp hoặc dừng hẳn bằng một cú bấm.</p>
+        <ul>
+          <li><svg><use href="#i-check"/></svg><span data-en>Failures are logged with an error code so you know why, not just that</span><span data-vi>Lỗi được ghi kèm mã lỗi, biết vì sao chứ không chỉ biết là lỗi</span></li>
+          <li><svg><use href="#i-check"/></svg><span data-en>Campaign history per page: drafts, running, completed</span><span data-vi>Lịch sử chiến dịch theo page: nháp, đang chạy, hoàn thành</span></li>
+        </ul>
+      </div>
+      <div class="browser"><div class="bar"><i></i><i></i><i></i><span class="url">app.pikabox.tech/pages/mina-boutique/campaigns</span></div><img src="assets/campaigns.png" width="1440" height="820" alt="Campaign list showing a draft, a running campaign at 23 of 40, and a completed campaign at 18 of 18"></div>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="bg2">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <span class="kicker" data-en>How it works</span><span class="kicker" data-vi>Cách hoạt động</span>
+      <h2 data-en>Three parts, one source of truth</h2>
+      <h2 data-vi>Ba thành phần, một nguồn sự thật</h2>
+      <p data-en>A web dashboard to give orders, a backend that owns every campaign and message, and a Chrome extension that does the sending on your own browser session.</p>
+      <p data-vi>Dashboard web để ra lệnh, backend giữ toàn bộ chiến dịch và tin nhắn, extension Chrome thực hiện gửi ngay trên phiên đăng nhập của bạn.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><h3 data-en>Install the extension</h3><h3 data-vi>Cài extension</h3><p data-en>Add PikaBox to Chrome, open the dashboard, connect the Facebook account you already use and pick the pages you manage.</p><p data-vi>Thêm PikaBox vào Chrome, mở dashboard, kết nối tài khoản Facebook đang dùng và chọn các page bạn quản lý.</p></div>
+      <div class="step rv"><h3 data-en>Scan and segment</h3><h3 data-vi>Quét và phân nhóm</h3><p data-en>Scan the inbox once. Filter customers by label, gender or name and pick who should hear from you.</p><p data-vi>Quét inbox một lần. Lọc khách theo nhãn, giới tính hoặc tên và chọn ai sẽ nhận tin.</p></div>
+      <div class="step rv"><h3 data-en>Launch and monitor</h3><h3 data-vi>Chạy và theo dõi</h3><p data-en>Create the campaign and keep Chrome open. The extension pulls one message at a time from the server, sends it, and reports back.</p><p data-vi>Tạo chiến dịch và giữ Chrome mở. Extension lấy từng tin từ server, gửi, rồi báo kết quả về.</p></div>
+    </div>
+    <div class="stack rv">
+      <strong data-en>Stack</strong><strong data-vi>Công nghệ</strong>
+      <code>NestJS</code><code>PostgreSQL</code><code>React</code><code>Chrome MV3</code>
+      <span data-en>Work is handed out with short leases and reclaimed if a device disappears. 182 backend end-to-end tests run against a real database, plus a real-browser test harness.</span>
+      <span data-vi>Việc được giao theo lease ngắn và thu hồi nếu máy biến mất. 182 test end-to-end backend chạy trên database thật, cộng bộ test trình duyệt thật.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="safety rv">
+      <div>
+        <span class="kicker" style="color:#93c5fd" data-en>Account safety</span><span class="kicker" style="color:#93c5fd" data-vi>An toàn tài khoản</span>
+        <h2 data-en>Designed to slow down before anything goes wrong</h2>
+        <h2 data-vi>Thiết kế để chậm lại trước khi có chuyện</h2>
+        <p data-en>Bulk messaging tools get accounts restricted by pushing too hard. PikaBox paces every campaign and watches the error rate of each account continuously.</p>
+        <p data-vi>Tool gửi hàng loạt làm tài khoản bị hạn chế vì đẩy quá tay. PikaBox giữ nhịp mọi chiến dịch và theo dõi tỷ lệ lỗi của từng tài khoản liên tục.</p>
+      </div>
+      <div class="list">
+        <div class="item"><svg><use href="#i-pause"/></svg><div><b data-en>Automatic pause</b><b data-vi>Tự tạm dừng</b><span data-en>When failures cross the threshold within five minutes, every campaign on that account pauses.</span><span data-vi>Lỗi vượt ngưỡng trong năm phút thì mọi chiến dịch của tài khoản đó tạm dừng.</span></div></div>
+        <div class="item"><svg><use href="#i-shield"/></svg><div><b data-en>Hard block detection</b><b data-vi>Nhận diện chặn cứng</b><span data-en>A block signal from the platform opens the breaker immediately, without waiting for more samples.</span><span data-vi>Tín hiệu chặn từ nền tảng mở mạch ngay lập tức, không chờ thêm mẫu.</span></div></div>
+        <div class="item"><svg><use href="#i-live"/></svg><div><b data-en>Careful recovery</b><b data-vi>Phục hồi thận trọng</b><span data-en>After a cool-down the account sends a handful of probe messages; it resumes only if they succeed. You can also resume by hand.</span><span data-vi>Sau thời gian nguội, tài khoản gửi vài tin thăm dò, chỉ chạy lại khi thành công. Bạn cũng có thể gỡ tay.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="bg2">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <span class="kicker" data-en>Pricing</span><span class="kicker" data-vi>Bảng giá</span>
+      <h2 data-en>Simple early-access pricing</h2>
+      <h2 data-vi>Giá đơn giản cho giai đoạn dùng sớm</h2>
+      <p data-en>Billed monthly in VND. Cancel any time.</p>
+      <p data-vi>Thanh toán theo tháng bằng VND. Hủy bất cứ lúc nào.</p>
+    </div>
+    <div class="price">
+      <div class="plan hi rv">
+        <span class="tag" data-en>Available now</span><span class="tag" data-vi>Đang mở</span>
+        <h3>Starter</h3>
+        <div class="amt">149.000đ <small>/ <span data-en>month</span><span data-vi>tháng</span></small></div>
+        <p class="desc" data-en>For one shop that wants to re-engage its inbox properly.</p>
+        <p class="desc" data-vi>Cho một shop muốn chăm lại inbox một cách tử tế.</p>
+        <ul>
+          <li><svg><use href="#i-check"/></svg><span data-en>1 Facebook account, up to 3 pages</span><span data-vi>1 tài khoản Facebook, tối đa 3 page</span></li>
+          <li><svg><use href="#i-check"/></svg><span data-en>Inbox scan and customer database</span><span data-vi>Quét inbox và danh sách khách</span></li>
+          <li><svg><use href="#i-check"/></svg><span data-en>Unlimited campaigns</span><span data-vi>Không giới hạn chiến dịch</span></li>
+          <li><svg><use href="#i-check"/></svg><span data-en>Pacing, dedup and circuit breaker</span><span data-vi>Nhịp gửi, chống trùng và bảo vệ tài khoản</span></li>
+          <li><svg><use href="#i-check"/></svg><span data-en>Multiple devices</span><span data-vi>Chạy nhiều máy</span></li>
+        </ul>
+        <a class="btn btn-primary" href="mailto:hungpv4@pikabox.tech?subject=PikaBox%20Starter"><span data-en>Request access</span><span data-vi>Đăng ký</span></a>
+      </div>
+      <div class="plan rv">
+        <span class="tag soon" data-en>Coming soon</span><span class="tag soon" data-vi>Sắp ra mắt</span>
+        <h3>AI Pack</h3>
+        <div class="amt" data-en>Add-on</div><div class="amt" data-vi>Gói bổ sung</div>
+        <p class="desc" data-en>Claude-powered helpers on top of Starter.</p>
+        <p class="desc" data-vi>Trợ lý AI chạy trên nền Claude, bổ sung cho Starter.</p>
+        <ul>
+          <li><svg><use href="#i-check"/></svg><span data-en>Auto-tag customers by intent</span><span data-vi>Tự gắn nhãn khách theo ý định</span></li>
+          <li><svg><use href="#i-check"/></svg><span data-en>Pre-send content check that flags risky wording</span><span data-vi>Kiểm duyệt nội dung trước khi gửi, cảnh báo câu chữ rủi ro</span></li>
+          <li><svg><use href="#i-check"/></svg><span data-en>Per-customer summary from chat history</span><span data-vi>Tóm tắt từng khách từ lịch sử chat</span></li>
+          <li><svg><use href="#i-check"/></svg><span data-en>Suggested replies in your brand voice</span><span data-vi>Gợi ý trả lời đúng giọng thương hiệu</span></li>
+        </ul>
+        <a class="btn btn-ghost" href="mailto:hungpv4@pikabox.tech?subject=PikaBox%20AI%20Pack%20waitlist"><span data-en>Join the waitlist</span><span data-vi>Vào danh sách chờ</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-h rv"><span class="kicker">FAQ</span><h2 data-en>Common questions</h2><h2 data-vi>Câu hỏi thường gặp</h2></div>
+    <div class="faq rv">
+      <details><summary><span data-en>What do I need to run PikaBox?</span><span data-vi>Cần gì để chạy PikaBox?</span></summary><p data-en>Google Chrome with the PikaBox extension, a Facebook account that administers the pages, and a PikaBox account. Chrome needs to stay open while a campaign is sending.</p><p data-vi>Google Chrome có cài extension PikaBox, một tài khoản Facebook đang quản trị các page, và một tài khoản PikaBox. Chrome cần mở trong lúc chiến dịch đang gửi.</p></details>
+      <details><summary><span data-en>Will my account get restricted?</span><span data-vi>Tài khoản có bị hạn chế không?</span></summary><p data-en>No tool can promise that. What PikaBox does is pace every campaign, skip people you contacted recently, and pause an account automatically when its error rate climbs, so problems are caught early instead of after thousands of messages.</p><p data-vi>Không tool nào hứa được điều đó. PikaBox giữ nhịp gửi, bỏ qua khách vừa được liên hệ, và tự tạm dừng tài khoản khi tỷ lệ lỗi tăng, để vấn đề được bắt sớm thay vì sau hàng nghìn tin.</p></details>
+      <details><summary><span data-en>How many messages can I send?</span><span data-vi>Gửi được bao nhiêu tin?</span></summary><p data-en>A campaign can target up to 50,000 recipients. Speed is governed by the pacing you set and by the account's health, not by a PikaBox quota.</p><p data-vi>Một chiến dịch nhắm tối đa 50.000 người nhận. Tốc độ phụ thuộc nhịp gửi bạn đặt và sức khỏe tài khoản, không bị PikaBox giới hạn số lượng.</p></details>
+      <details><summary><span data-en>Can I send from several computers?</span><span data-vi>Gửi từ nhiều máy được không?</span></summary><p data-en>Yes. Each Chrome with the extension registers as a sender. The server hands out one message at a time with a short lease, so two machines never send the same message, and work from a machine that goes offline is reclaimed.</p><p data-vi>Được. Mỗi Chrome có extension đăng ký thành một máy gửi. Server giao từng tin một với lease ngắn, hai máy không bao giờ gửi cùng một tin, máy mất kết nối thì việc được thu hồi.</p></details>
+      <details><summary><span data-en>Where is my data stored?</span><span data-vi>Dữ liệu lưu ở đâu?</span></summary><p data-en>Customer lists and campaigns live in PikaBox's database, scoped to your account. Your Facebook password is never seen by PikaBox; the extension works from the session already open in your browser.</p><p data-vi>Danh sách khách và chiến dịch nằm trong database của PikaBox, tách riêng theo tài khoản của bạn. PikaBox không bao giờ thấy mật khẩu Facebook, extension làm việc trên phiên đăng nhập sẵn có trong trình duyệt.</p></details>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta-band rv">
+      <h2 data-en>Ready to talk to your old customers again?</h2>
+      <h2 data-vi>Sẵn sàng nói chuyện lại với khách cũ?</h2>
+      <p data-en>Early access is open for a small number of shops. Tell us about your page and we will set you up.</p>
+      <p data-vi>Đang mở dùng sớm cho một số shop. Cho chúng tôi biết về page của bạn, chúng tôi sẽ cài đặt giúp.</p>
+      <div class="row">
+        <a class="btn btn-light" href="mailto:hungpv4@pikabox.tech?subject=PikaBox%20early%20access"><span data-en>Request early access</span><span data-vi>Đăng ký dùng sớm</span></a>
+        <a class="btn btn-outline-white" href="mailto:hungpv4@pikabox.tech">hungpv4@pikabox.tech</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 PikaBox · Ha Noi, Vietnam</span>
+    <div class="links">
+      <a href="#features"><span data-en>Features</span><span data-vi>Tính năng</span></a>
+      <a href="#pricing"><span data-en>Pricing</span><span data-vi>Bảng giá</span></a>
+      <a href="mailto:hungpv4@pikabox.tech"><span data-en>Contact</span><span data-vi>Liên hệ</span></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Chuyển ngôn ngữ: đổi lang trên <html>, CSS tự ẩn/hiện data-en / data-vi; nhớ lựa chọn trong localStorage
+  function setLang(l){
+    document.documentElement.lang = l;
+    document.querySelectorAll('.lang button').forEach(function(b){ b.classList.toggle('on', b.dataset.lang === l); });
+    try { localStorage.setItem('lang', l); } catch (e) {}
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
+  try {
+    var saved = localStorage.getItem('lang');
+    if (saved) setLang(saved);
+    else if ((navigator.language || '').toLowerCase().indexOf('vi') === 0) setLang('vi');
+  } catch (e) {}
+
+  // Hiệu ứng hiện dần khi cuộn; nếu không có IntersectionObserver thì hiện hết
+  var rv = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+    rv.forEach(function(el){ io.observe(el); });
+  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
+</script>
+</body>
+</html>
